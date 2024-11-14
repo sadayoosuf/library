@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+
+{% block content %}
+<style>
+    body {
+        background-image: url("{% static 'images/lib.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 1100px;
+    }
+</style>
+
+<h2 class="text-center" style="color:#BC9F8B;">welcome to library Application:<span>
+{% if user.is_authenticated %}
+{{user.username}}
+{% else %}
+    guest</span></h2>
+{% endif %}
+
+
+{% endblock %}
+

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+<h2 class="text-center" style="color:#F8F4E1;">Edit Book Details</h2>
+
+<!--form -->
+<div class="container" style="width:50%;">
+
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">Title</label>
+    <input type="text" class="form-control" name="t" value="{{book.title}}" placeholder="enter title name">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">Author</label>
+    <input type="text" class="form-control" name="a" value="{{book.author}}" placeholder="enter Author name">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">Pages</label>
+    <input type="number" class="form-control" name="p" value="{{book.pages}}" placeholder="enter number of pages">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">Price</label>
+    <input type="number" class="form-control" name="pr"  value="{{book.price}}" placeholder="enter price">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">Language</label>
+    <input type="text" class="form-control" name="l"  value="{{book.language}}" placeholder="enter language">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">Cover</label>
+    <img src="{{book.cover.url}}" height="100px" width="100px">
+    <input type="file" class="form-control" name="i">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">pdf</label>
+    <a href="{{book.pdf.url}}">document</a>
+    <input type="file" class="form-control" name="f">
+  </div>
+
+
+
+  <button type="submit" value="Edit books" class="btn" style="color:#F8F4E1;background-color:#74512D;">Submit</button>
+
+</form>
+
+</div>
+{% endblock %}
+
+
+
+

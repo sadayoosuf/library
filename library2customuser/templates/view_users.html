@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<h2 class="text-center">User's Details</h2>
+
+<!--<ol>-->
+<!--    {% for i in user %}-->
+
+<!--        <li>Users Details</li>-->
+
+<!--        <ul>-->
+
+<!--            <li>{{ i.name }}</li>-->
+<!--            <li>{{ i.age }}</li>-->
+<!--            <li>{{ i.place }}</li>-->
+<!--            <li>{{ i.gender }}</li>-->
+<!--            <li>{{ i.email }}</li>-->
+
+<!--        </ul>-->
+<!--    {% endfor %}-->
+<!--</ol>-->
+
+
+<!--table representation-->
+
+<table class="container table table-striped table-bordered " style="background-color:#F7EFE5;">
+    <tr>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>PLACE</th>
+        <th>GENDER</th>
+        <th>EMAIL</th>
+    </tr>
+
+    {% for i in user %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.place}}</td>
+        <td>{{i.gender}}</td>
+        <td>{{i.email}}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}
+

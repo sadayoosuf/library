@@ -1,0 +1,64 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<h2 class="text-center" style="color:#BC9F8B;">Books Details</h2>
+
+<table class="container table table-striped table-bordered " style="background-color:#F7EFE5;">
+    <tr>
+        <th>COVER</th>
+        <th>TITLE</th>
+        <th>AUTHOR</th>
+        <th>PAGES</th>
+        <th>PRICE</th>
+        <th>LANGUAGE</th>
+        <th>DOCUMENT</th>
+        <th>VIEW</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+
+    {% for i in book %}
+    <tr>
+        <td><img src="{{i.cover.url}}" height="100px" width="100px"></td>
+        <td>{{i.title}}</td>
+        <td>{{i.author}}</td>
+        <td>{{i.pages}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.language}}</td>
+        <td><a href="{{i.pdf.url}}">Document</a></td>
+        <td><a href="{% url 'books:detail' i.id %}" class="btn" style="color:#F8F4E1;background-color:#74512D;">view</a></td>
+        <td><a href="{% url 'books:edit' i.id %}" class="btn" style="color:#F8F4E1;background-color:#74512D;">edit</a></td>
+        <td><a href="{% url 'books:delete' i.id %}" class="btn " style="color:#F8F4E1;background-color:#74512D;">delete</a></td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<!--list-->
+
+
+<!--<ol>-->
+<!--    {% for i in book %}-->
+
+<!--        <li>Book Details</li>-->
+
+<!--        <ul>-->
+
+<!--            <li>{{ i.title }}</li>-->
+<!--            <li>{{ i.author }}</li>-->
+<!--            <li>{{ i.pages }}</li>-->
+<!--            <li>{{ i.price }}</li>-->
+<!--            <li>{{ i.language }}</li>-->
+
+<!--        </ul>-->
+<!--    {% endfor %}-->
+<!--</ol>-->
+
+
+{% endblock %}
+

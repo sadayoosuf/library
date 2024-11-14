@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+<h2 class="text-center" style="color:#BC9F8B;">add books</h2>
+
+<!--form -->
+<div class="container" style="width:50%;">
+
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">Title</label>
+    <input type="text" class="form-control" name="t" placeholder="enter title name">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">Author</label>
+    <input type="text" class="form-control" name="a" placeholder="enter Author name">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">Pages</label>
+    <input type="number" class="form-control" name="p" placeholder="enter number of pages">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">Price</label>
+    <input type="number" class="form-control" name="pr" placeholder="enter price">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">Language</label>
+    <input type="text" class="form-control" name="l" placeholder="enter language">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">Cover</label>
+    <input type="file" class="form-control" name="i">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1;">pdf</label>
+    <input type="file" class="form-control" name="f">
+  </div>
+
+
+
+  <button type="submit" value="Add books" class="btn" style="color:#F8F4E1;background-color:#74512D;">Submit</button>
+
+</form>
+
+</div>
+{% endblock %}
+
+
